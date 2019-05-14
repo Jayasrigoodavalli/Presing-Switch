@@ -1,7 +1,7 @@
 /*
- * GccApplication7.c
+ * GccApplication2.c
  *
- * Created: 10-May-19 11:20:00 AM
+ * Created: 09-May-19 4:02:55 PM
  * Author : JAYASREE
  */ 
 #ifndef F_CPU
@@ -14,17 +14,13 @@
 int main(void)
 {
     /* Replace with your application code */
-	DDRC=0X01;
-	DDRD=0X00;
-	
+	DDRA=0XFF;
     while (1) 
     {
-		if((PIND & (1<<PD0)) ==0) //IF Switch is pressed
-		{
-			PORTC=(1<<PC0); //Turn ON LED
-			_delay_ms(2000);
-			PORTC=(0<<PC0); //Turn OFF LED
-		}
+		PORTA=0XFF;
+		_delay_ms(100);
+		PORTA=0X00;
+		_delay_ms(100);
     }
 }
 
